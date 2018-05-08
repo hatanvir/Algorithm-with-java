@@ -1,2 +1,2 @@
 # Algorithm-with-java
-All practice algorithm will be here. 
+All practice data structure and algorithm will goes here
