@@ -40,6 +40,23 @@ public class Delete_from_singly_linkedList {
         deleteNode.next = null;
         return head;
     }
+     public node deletePosition(node head,int position){
+        node privious = head;
+        
+        if(position == 0){
+            return head.next;
+        }
+        int count = 0;
+        while(count < position-1){
+            privious = privious.next;
+            count ++;
+        }
+        node DeleteNode = privious.next;
+        privious.next = DeleteNode.next;
+        DeleteNode.next = null;
+        
+        return head;
+    }
     public static void main(String[] args) {
         Delete_from_singly_linkedList ob = new Delete_from_singly_linkedList();
         
@@ -55,6 +72,8 @@ public class Delete_from_singly_linkedList {
         ob.display(Node);
         node deletelast = ob.deleteTail(head);
         ob.display(deletelast);
+        node deleteposition = ob.deletePosition(head,2);
+        ob.display(deleteposition);
     }
     
 }
