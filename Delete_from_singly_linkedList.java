@@ -51,8 +51,8 @@ public class Delete_from_singly_linkedList {
         second.next = third;
         
         ob.display(head);
-        /*node Node = ob.deleteHead(head);
-        ob.display(Node);*/
+        node Node = ob.deleteHead(head);
+        ob.display(Node);
         node deletelast = ob.deleteTail(head);
         ob.display(deletelast);
     }
