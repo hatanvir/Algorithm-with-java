@@ -21,7 +21,6 @@ public class Singly_linkedlist_compare {
            this.next = next;
        }
     }
-    
     public int compare(node1 head1,node2 head2){
         node1 currenr1 = head1;
         node2 currenr2 = head2;
