@@ -1,8 +1,8 @@
 
 public class Circular_Singly_linked_list_implementation {
 
-	node head;
-	node last = null;
+	node last;
+	node first = null;
 	//structure class
 	private static class node{
 		int data;
@@ -16,20 +16,20 @@ public class Circular_Singly_linked_list_implementation {
 	public void insert(int data) {
 		node newNode = new node(data);
 		
-		if(head==null) {
-			last=newNode;
+		if(last==null) {
+			first=newNode;
 		}
-		newNode.next = head;
-		head = newNode;
-		last.next = head;
+		newNode.next = last;
+		last = newNode;
+		first.next = last;
 	}
 	//display
 	public void display() {
-		node current = head;
+		node current = last;
 		if(last == null) {
 			return;
 		}
-		while(current!=last) {
+		while(current!=first) {
 			System.out.print(current.data+"-->");
 			current=current.next;
 		}
@@ -43,5 +43,4 @@ public class Circular_Singly_linked_list_implementation {
 		
 		ob.display();
 	}
-
 }
