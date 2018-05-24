@@ -13,23 +13,21 @@ public class Circular_Singly_linked_list_implementation {
 		}
 	}
 	//function for inserting data
-	public void insert(int data) {
+	public void insertFirst(int data) {
 		node newNode = new node(data);
 		
 		if(last==null) {
-			first=newNode;
+			last=newNode;
 		}
-		newNode.next = last;
-		last = newNode;
-		first.next = last;
+		else {
+			newNode.next = last.next;
+		}
+		last.next = newNode;
 	}
 	//display
 	public void display() {
-		node current = last;
-		if(last == null) {
-			return;
-		}
-		while(current!=first) {
+		node current = last.next;
+		while(current!=last) {
 			System.out.print(current.data+"-->");
 			current=current.next;
 		}
@@ -37,10 +35,11 @@ public class Circular_Singly_linked_list_implementation {
 	}
 	public static void main(String[] args) {
 		Circular_Singly_linked_list_implementation ob = new Circular_Singly_linked_list_implementation();
-		ob.insert(10);
-		ob.insert(20);
-		ob.insert(30);
+		ob.insertFirst(10);
+		ob.insertFirst(20);
+		ob.insertFirst(30);
 		
 		ob.display();
 	}
+
 }
